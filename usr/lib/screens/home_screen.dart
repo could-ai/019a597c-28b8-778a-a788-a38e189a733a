@@ -193,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 16),
               
               // Background Selector
-              if (_selectedImage != null) ..[
+              if (_selectedImage != null) ...<Widget>[
                 const Text(
                   'Wybierz Profesjonalne Tło:',
                   style: TextStyle(

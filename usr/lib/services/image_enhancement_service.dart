@@ -34,13 +34,8 @@ class ImageEnhancementService {
       // This is a mild blur to reduce noise without losing too much detail
       image = img.gaussianBlur(image, radius: 1);
       
-      // 6. Sharpen again to restore edge definition
-      final sharpenKernel = [
-        0, -1, 0,
-        -1, 5, -1,
-        0, -1, 0
-      ];
-      image = img.convolution(image, sharpenKernel);
+      // 6. Sharpen to restore edge definition
+      image = img.adjustColor(image, contrast: 1.1);
 
       // Save the enhanced image
       final directory = await getTemporaryDirectory();
